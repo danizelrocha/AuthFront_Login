@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-sign',
   templateUrl: './sign.component.html',
-  styleUrls: ['./sign.component.scss']
+  styleUrls: ['./sign.component.scss'],
 })
 export class SignComponent implements OnInit {
   public formAuth: FormGroup = this.formBuilder.group({
@@ -12,7 +12,13 @@ export class SignComponent implements OnInit {
     password: ['', [Validators.required]],
   });
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {}
+
+  public submitForm(){
+    if(this.formAuth.valid){
+      console.log(this.formAuth);
+    }
+  }
 }
