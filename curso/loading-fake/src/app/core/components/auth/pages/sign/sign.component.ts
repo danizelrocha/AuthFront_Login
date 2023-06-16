@@ -15,6 +15,8 @@ export class SignComponent implements OnInit {
     password: ['', [Validators.required]],
   });
 
+  public msgError!:string;
+
   constructor(
     private formBuilder: FormBuilder,
     private AuthService: AuthService
@@ -31,7 +33,7 @@ export class SignComponent implements OnInit {
         })
         .subscribe({
          next: (res) => res,
-         error: (e) => e,
+         error: (e) => (this.msgError = e),
         });
     }
   }
