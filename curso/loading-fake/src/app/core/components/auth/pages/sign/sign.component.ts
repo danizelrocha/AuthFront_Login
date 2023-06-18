@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 // Service
-import { AuthService } from './../../../../services/auth.service';
+import { AuthService } from 'src/app/core/services/auth.service';
+
 
 @Component({
   selector: 'app-sign',
@@ -24,7 +25,7 @@ export class SignComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public submitForm() {
+ /*  public submitForm() {
     if(this.formAuth.valid){
       this.AuthService
         .sing({
@@ -36,5 +37,5 @@ export class SignComponent implements OnInit {
          error: (e) => (this.msgError = e),
         });
     }
-  }
+  } */
 }

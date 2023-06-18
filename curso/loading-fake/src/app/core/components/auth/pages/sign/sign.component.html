@@ -43,7 +43,11 @@
         required
       />
     </label>
-    <button class="btn-vermelho" [disabled]="formAuth.invalid">Login</button>
+    <button
+     class="btn-vermelho"
+     [disabled]="formAuth.invalid"
+     (click)="submitForm()"
+     >Login</button>
   </form>
 
   <span class="msg-error" *ngIf="msgError">{{msgError}}</span>
